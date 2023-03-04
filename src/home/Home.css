@@ -1,0 +1,24 @@
+.sectionHome {
+  background-color: #233160;
+  color: white;
+  font-size: 30px;
+  border-radius: 10px;
+  border: none;
+  width: 250px;
+  height: 50px;
+  margin-top: 150px;
+}
+
+.sectionHome:hover { 
+  background-color: #96C96A;
+
+}
+.containerHome{ 
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  
+}
+.containerViews{ 
+  background-color: #6CCFCB;
+}

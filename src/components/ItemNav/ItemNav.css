@@ -1,0 +1,16 @@
+.itemNav {
+  width: 130px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15px;
+}
+.itemNav:hover {
+  color: #233160;
+  font-weight: 700;
+}
+
+.itemNav.isFocus {
+  color: #233160;
+  font-weight: 700;
+}

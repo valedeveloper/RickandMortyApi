@@ -1,0 +1,41 @@
+.containerGenerate {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    height: 100%;
+    padding: 20px;
+    position: relative;
+}
+
+.btnGenerate {
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    width: 247px;
+    background-color: #96C96A;
+    padding: 10px;
+}
+
+.btnGenerate:hover {
+    background-color: #233160;
+}
+
+.titleList {
+    color: white;
+    font-size: 40px;
+}
+
+.listCharactersGenerate {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 15px;
+}
+
+.textGenerate {
+    font-size: 30px;
+    font-weight: 700;
+    color: #233160;
+}

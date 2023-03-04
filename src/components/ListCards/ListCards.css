@@ -1,0 +1,9 @@
+.containerListCards{ 
+    display: grid;
+    grid-template-columns: repeat(auto-fit,255px);
+    grid-gap: 10px;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+

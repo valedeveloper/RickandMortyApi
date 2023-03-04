@@ -1,0 +1,41 @@
+.containerDescription {
+    display: flex;
+    align-items: center;
+}
+
+.containerImage {
+    flex: 4;
+}
+
+.containerImage img {
+    height: 250px;
+}
+
+.containerText {
+    text-align: left;
+    flex: 5;
+
+}
+
+.containerText h1 {
+    color: #233160;
+    font-size: 30px;
+}
+
+.containerText p {
+    font-weight: 300;
+    color: #233160;
+    text-align: justify;
+    padding-right: 50px;
+}
+
+/* Responsive */
+
+@media screen and (max-width:500px) {
+    .containerDescription {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+}
