@@ -1,0 +1,43 @@
+.footerTop {
+    background-color: #96C96A;
+    padding: 10px;
+}
+
+.containerSocial {
+    color: #233160;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.textEmail {
+    font-size: 20px;
+    font-weight: 300;
+    color: #233160;
+}
+
+.footerBottom {
+    background-color: #233160;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.iconCopy {
+    font-size: 20px;
+    color: white;
+}
+
+.footerBottom p {
+    margin: 0;
+    padding: 10px;
+    color: white;
+}
+
+.footerBottom span {
+    font-weight: 600;
+}

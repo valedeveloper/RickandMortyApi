@@ -8,61 +8,110 @@ function Generate() {
   const [listGenerate, setListGenerate] = useState([]);
   const { getSingleCharacter, singleCharacter } = useListObject();
   let numberRandom = 0;
+
   const arrayNumbers = [];
 
   useEffect(() => {
-    getSingleCharacter(idCharacter);
-    console.log(singleCharacter)
-    setListGenerate((prevListGenerate) =>
-      prevListGenerate.concat(singleCharacter)
-    );
+    if (idCharacter != null) {
+      getSingleCharacter(idCharacter);
+      setListGenerate((prevListGenerate) =>
+        prevListGenerate.concat(singleCharacter)
+      );
+    }
   }, [idCharacter]);
 
   const validateNumber = () => {
-    let validateNumber = true;
-    while (validateNumber) {
-      numberRandom = Math.floor(Math.random() * 826);
-      validateNumber = arrayNumbers.some((item) => item === numberRandom);
-      console.log(validateNumber);
-      if (!validateNumber) {
-        setIdCharacter(numberRandom);
-        console.log(arrayNumbers);
-        arrayNumbers.push(numberRandom);
-      } else {
-        return validateNumber;
-      }
-    }
-  };
+    // while (validateNumberArray) {
+    //   console.log(validateNumberArray);
+    //   numberRandom = Math.floor(Math.random() * 826);
+    //   console.log(numberRandom);
+    //   validateNumberArray = arrayNumbers.some((item) => item === numberRandom);
+      
+    //   if(!validateNumberArray){ 
+    //     arrayNumbers.push(numberRandom);
+    //   }else{ return validateNumberArray}
+    // }
+    
 
+    // if(validateNumberArray){
+    //   arrayNumbers.push(numberRandom)
+    //   console.log(arrayNumbers)
+    // }
+
+    // while (validateNumber) {
+
+    //   console.log(validateNumber);
+    //   if (!validateNumber) {
+    //     setIdCharacter(numberRandom)
+    //     console.log(numberRandom)
+    //   } else {
+    //     return validateNumber
+    //   }
+    // }
+    // console.log(arrayNumbers)
+  };
+  function generarNumerosSinRepetir() {
+    var numeros = [];
+    var numero;
+
+    numero = Math.floor(Math.random() * 826)
+    if (numeros.indexOf(numero) === -1){
+      numeros.push(numero);
+      console.log(numeros)
+      setIdCharacter(numero)
+    }else{
+      generarNumerosSinRepetir()
+    }
+
+
+    // let validateNumberArray= numeros.some((item) => item != numero);
+    
+    // // Generar una cantidad de números aleatorios no repetidos
+    // while (validateNumberArray) {
+      
+    //   if (numeros.indexOf(numero) === -1) {
+    //     validateNumberArray=false
+    //     numeros.push(numero);
+    //     console.log(numeros)
+    //   }else{ 
+    //     return validateNumberArray
+    //   }
+    }
+
+    
   return (
     <div className="containerGenerate">
       {idCharacter === null ? (
-        <p className="textGenerate">No se ha cargado ningún personaje. ¡Genéralo!</p>
+        <p className="textGenerate">
+          No se ha cargado ningún personaje. ¡Genéralo!
+        </p>
       ) : (
         <CardGenerate
-          image={singleCharacter.image}
-          title={singleCharacter.name}
-          status={singleCharacter.status}
-          location={singleCharacter.location.name}
-          specie={singleCharacter.species}
-          gender={singleCharacter.gender}
+          image={singleCharacter?.image}
+          title={singleCharacter?.name}
+          status={singleCharacter?.status}
+          location={singleCharacter.location?.name}
+          specie={singleCharacter?.species}
+          gender={singleCharacter?.gender}
         />
       )}
 
-      <button className="btnGenerate" onClick={validateNumber}>
+      <button className="btnGenerate" onClick={generarNumerosSinRepetir}>
         Generar
       </button>
-      {idCharacter !== null?<h2 className="titleList">Lista de Personajes</h2>:null}
+      {idCharacter !== null ? (
+        <h2 className="titleList">Lista de Personajes</h2>
+      ) : null}
       <ul className="listCharactersGenerate">
         {listGenerate.map((item) => (
           <CharacterGenerate
-            key={item.id}
-            name={item.name}
-            image={item.image}
-            status={item.status}
-            location={item.location.name}
-            specie={item.species}
-            gender={item.gender}
+            key={item?.id}
+            name={item?.name}
+            image={item?.image}
+            status={item?.status}
+            location={item.location?.name}
+            specie={item?.species}
+            gender={item?.gender}
           />
         ))}
       </ul>

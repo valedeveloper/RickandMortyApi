@@ -26,7 +26,7 @@ export function useListObject() {
   const getSingleCharacter = async (id) => {
     try{ 
       const response = await fetch(
-        `https://rickandmortyapi.com/api/character/${id || 3}`
+        `https://rickandmortyapi.com/api/character/${id}`
       );
       const data = await response.json();
       setSingleCharacter(data);

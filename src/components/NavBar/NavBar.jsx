@@ -19,7 +19,7 @@ function NavBar() {
     },
     {
       id: 3,
-      title: "Generador Automático",
+      title: "Generador",
       link: "/generate",
     },
   ];

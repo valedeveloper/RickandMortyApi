@@ -4,17 +4,16 @@
 }
 
 .containerImage {
-    flex: 4;
+    flex: 5;
 }
 
 .containerImage img {
-    height: 250px;
+    height: 450px;
 }
 
 .containerText {
     text-align: left;
-    flex: 5;
-
+    flex: 3;
 }
 
 .containerText h1 {

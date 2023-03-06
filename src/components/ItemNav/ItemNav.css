@@ -1,9 +1,8 @@
 .itemNav {
-  width: 130px;
   color: white;
-  font-weight: 500;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 20px;
+  text-shadow: 5px 0px 7px #86c64e;
 }
 .itemNav:hover {
   color: #233160;

@@ -5,6 +5,7 @@ import Panel from '../components/Panel/Panel';
 import Characters from '../views/Characters/Characters';
 import Episodies from '../views/Episodies/Episodies';
 import Generate from '../views/Generate/Generate';
+import Footer from '../components/Footer/Footer';
 import './Home.css';
 import { Routes, Route, Link } from 'react-router-dom';
 function Home() {
@@ -21,7 +22,7 @@ function Home() {
           <Route path='/generate' element={<Generate />} />
         </Routes>
       </div>
-
+      <Footer/>
     </>
   )
 }
