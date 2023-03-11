@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import CardGenerate from "../CardGenerate/CardGenerate";
+import Modal from '../Modal/Modal';
 import "./CharacterGenerate.css";
 function CharacterGenerate({ name, image, status, location, specie, gender }) {
-  const [stateDescription, setStateDescription] = useState(true);
+  const [stateDescription, setStateDescription] = useState(false);
+
+  const handledOpen = () => {
+    setStateDescription(true)
+  }
+  const handledClose = () => {
+    setStateDescription(false)
+  }
+
+
   return (
     <div className="containerCharacterGenerate">
       <div className="characterGenerate">
@@ -10,14 +20,11 @@ function CharacterGenerate({ name, image, status, location, specie, gender }) {
           <img className="imageCharacter" src={image} />
           <h3>{name}</h3>
         </div>
-        <button className="btnDetails" type="button">
+        <button onClick={handledOpen} className="btnDetails" type="button">
           Detalles
         </button>
       </div>
-      {/* {stateDescription && (
-        <CardGenerate isDetails={true}
-        />
-      )}  */}
+      {stateDescription && <Modal children={<CardGenerate title={name} image={image} status={status} location={location} specie={specie} gender={gender}/>} closeModal={handledClose} />}
     </div>
   );
 }

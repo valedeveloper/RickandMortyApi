@@ -1,7 +1,6 @@
 import React from "react";
 import "./CardGenerate.css";
 function CardGenerate({
-  isDetails,
   image,
   title,
   status,
@@ -10,8 +9,7 @@ function CardGenerate({
   gender,
 }) {
   return (
-    <div className={"cardGenerate " + (isDetails && "isDetails")}>
-      {isDetails && <span className="closeDetails">X</span>}
+    <div className="cardGenerate">
       <div className="containerImageGenerate">
         <img src={image} />
       </div>

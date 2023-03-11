@@ -1,0 +1,34 @@
+.modal{
+    background-color: rgb(255, 255, 255,.8);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.modalContainer{ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap:10px;
+    justify-content: center;
+    position: relative;
+}
+
+.closeModal{ 
+    color: #233160;
+    font-size: 30px;
+    top: 140px;
+    right: 10px;
+    z-index: 10;
+    position: absolute;
+}
+.closeModal:hover{
+    transform: scale(1.5);
+    transition: all 1s ease-in-out;
+    
+
+}

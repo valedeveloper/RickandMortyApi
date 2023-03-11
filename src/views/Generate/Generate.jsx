@@ -8,7 +8,6 @@ function Generate() {
   const [listGenerate, setListGenerate] = useState([]);
   const { getSingleCharacter, singleCharacter } = useListObject();
   let numberRandom = 0;
-
   const arrayNumbers = [];
 
   useEffect(() => {
@@ -95,12 +94,11 @@ function Generate() {
           gender={singleCharacter?.gender}
         />
       )}
-
       <button className="btnGenerate" onClick={generarNumerosSinRepetir}>
         Generar
       </button>
-      {idCharacter !== null ? (
-        <h2 className="titleList">Lista de Personajes</h2>
+      {listGenerate.length != [] ? (
+        <h2 className="titleList"> Personajes Generados</h2>
       ) : null}
       <ul className="listCharactersGenerate">
         {listGenerate.map((item) => (

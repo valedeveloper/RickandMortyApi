@@ -15,14 +15,7 @@
     justify-content: space-between;
 }
 
-.cardGenerate.isDetails {
-    position: absolute;
-    top: 20px;
-}
 
-.closeDetails {
-    font-size: 20px;
-}
 
 .imageContainer {
     display: flex;

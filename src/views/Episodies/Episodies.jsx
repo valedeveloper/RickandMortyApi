@@ -3,8 +3,9 @@ import Spinner from "react-bootstrap/Spinner";
 import { useListObject } from "../../hooks/useListObject";
 import ListCards from "../../components/ListCards/ListCards";
 import Pagination from "../../components/Pagination/Pagination";
+
+const initialUrl = "https://rickandmortyapi.com/api/episode";
 function Episodies() {
-  const initialUrl = "https://rickandmortyapi.com/api/episode";
   const {
     spinner,
     listResults,

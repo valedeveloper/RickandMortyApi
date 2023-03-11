@@ -1,4 +1,5 @@
 .cardGenerate {
+    position: relative;
     width: 935px;
     height: 400px;
     background-color: #D7F2F2;

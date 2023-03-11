@@ -3,9 +3,10 @@ import Card from "../../components/Card/Card";
 import { useListObject } from "../../hooks/useListObject";
 import ListCards from "../../components/ListCards/ListCards";
 import Pagination from "../../components/Pagination/Pagination";
+const initialUrl = "https://rickandmortyapi.com/api/character";
 function Characters() {
-  const initialUrl = "https://rickandmortyapi.com/api/character";
-  const { listResults, pagination, getAllData, handledPrev, handledNext } =useListObject();
+  const { listResults, pagination, getAllData, handledPrev, handledNext } =
+    useListObject();
 
   useEffect(() => {
     getAllData(initialUrl);
