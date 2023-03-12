@@ -13,13 +13,16 @@ function Card({
 }) {
   return (
     <div className="containerCard">
-      <h1>{name}</h1>
-      {image ? (
-        <div className="containerImageCard">
-          <img src={image} />
-        </div>
-      ) : null}
-      <span className="generCard">{gender ? gender : episode}</span>
+      <div className="topContainer">
+        <h1>{name}</h1>
+        {image ? (
+          <div className="containerImageCard">
+            <img src={image} />
+          </div>
+        ) : null}
+      </div>
+     <div className="bottomContainer">
+     <span className="generCard">{gender ? gender : episode}</span>
       <div className="listProperties">
         {status ? (
           <p>
@@ -38,6 +41,7 @@ function Card({
           </p>
         ) : null}
       </div>
+     </div>
     </div>
   );
 }

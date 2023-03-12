@@ -1,5 +1,5 @@
 .modal{
-    background-color: rgb(255, 255, 255,.8);
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(5px);
     position: fixed;
     top: 0;
@@ -16,6 +16,7 @@
     gap:10px;
     justify-content: center;
     position: relative;
+    
 }
 
 .closeModal{ 

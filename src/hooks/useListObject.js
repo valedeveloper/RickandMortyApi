@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export function useListObject() {
   const [listResults, setListResults] = useState([]);
   const [singleCharacter, setSingleCharacter] = useState([]);
   const [pagination, setPagination] = useState([]);
+  const [spinner,setSpinner]=useState(true)
 
 
   const getAllData = (url) => {
@@ -12,6 +13,7 @@ export function useListObject() {
       .then((data) => {
         setListResults(data.results);
         setPagination(data.info);
+        setSpinner(false)
       })
       .catch((e) => console.log(e));
   };
@@ -30,6 +32,7 @@ export function useListObject() {
       );
       const data = await response.json();
       setSingleCharacter(data);
+      setSpinner(false)
     }
     catch(error){ 
       console.log(error)
@@ -45,5 +48,6 @@ export function useListObject() {
     handledNext,
     getSingleCharacter,
     singleCharacter,
+    spinner
   };
 }
