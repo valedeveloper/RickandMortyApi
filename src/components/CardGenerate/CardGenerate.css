@@ -1,70 +1,111 @@
 .cardGenerate {
-    position: relative;
-    width: 935px;
-    height: 400px;
-    background-color: #D7F2F2;
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    -webkit-box-shadow: 6px 0px 15px 0px rgba(35,49,96,0.48); 
-    box-shadow: 6px 0px 15px 0px rgba(35,49,96,0.48);
-
+  position: relative;
+  width: 935px;
+  height: 400px;
+  background-color: #d7f2f2;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 6px 0px 15px 0px rgba(35, 49, 96, 0.48);
+  box-shadow: 6px 0px 15px 0px rgba(35, 49, 96, 0.48);
 }
 
 .containerImageGenerate {
-    flex: 5;
-    background-color: #F5F5F5;
-    height: 100%;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  flex: 5;
+  background-color: #f5f5f5;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .containerImageGenerate img {
-    height: 200px;
-    border-radius: 10px;
+  height: 200px;
+  border-radius: 10px;
 }
 
 .containerCardDescription {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 8;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 8;
+  gap: 10px;
 }
 
 .containerCardDescription span {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .containerCardDescription h1 {
-    color: #233160;
-    font-size: 30px;
+  color: #233160;
+  font-size: 30px;
 }
 
 .listDescription {
-    color: #233160;
-    display: flex;
-    flex-direction: column;
+  color: #233160;
+  display: flex;
+  flex-direction: column;
 }
 
 .genderGenerate {
-    cursor: pointer;
-    text-align: center;
-    width: 180px;
-    padding: 10px;
-    background-color: #96C96A;
-    color: white;
-    font-weight: 700;
-    border-radius: 20px;
-
+  cursor: pointer;
+  text-align: center;
+  width: 180px;
+  padding: 5px;
+  background-color: #96c96a;
+  color: white;
+  font-weight: 700;
+  border-radius: 20px;
 }
 
 .containerCardDescription p {
-    color: #233160;
-    font-weight: 700;
-    font-size: 20px;
+  color: #233160;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 930px) {
+  .cardGenerate {
+    width: 700px;
+  }
+
+  .containerImageGenerate img {
+    padding: 10px;
+  }
+
+  .containerCardDescription h1 {
+    font-size: 25px;
+  }
+
+  .genderGenerate {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cardGenerate {
+    width: 500px;
+  }
+
+  .containerImageGenerate img {
+    padding: 5px;
+  }
+}
+
+
+@media screen and (max-width: 415px) {
+  .cardGenerate {
+    width: 310px;
+  }
+
+  .containerImageGenerate img {
+    padding: 5px;
+    height: 150px;
+  }
+
+  .containerCardDescription p {
+    font-size: 15px;
+  }
 }

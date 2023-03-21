@@ -1,7 +1,7 @@
 .containerCharacterGenerate {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
 .characterGenerate {
@@ -43,3 +43,45 @@
     font-size: 20px;
     color: white;
 }
+
+
+
+@media screen and (max-width: 700px ) {
+    .characterGenerate {
+        width: 450px;
+    }
+    .containerImageGenerate img {
+      padding: 5px;
+    }
+  }
+
+
+  @media screen and (max-width: 415px) {
+    .characterGenerate {
+        width: 280px;
+    }
+    .imageContainer h3 { 
+        font-size: 18px;
+    }
+    .btnDetails{ 
+        width: 90px;
+        padding: 2px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .characterGenerate {
+        width: 260px;
+    }
+    .imageContainer h3 { 
+        font-size: 18px;
+    }
+    .btnDetails{ 
+        width: 90px;
+        padding: 2px;
+    }
+
+}
+ 
+ 

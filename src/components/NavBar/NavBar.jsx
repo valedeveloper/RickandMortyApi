@@ -24,15 +24,9 @@ function NavBar() {
     },
   ];
  
-  const enterHover = () => {
-    setIsHover(true);
-  };
-  const leaveHover = () => {
-    setIsHover(false);
-  };
-  const showMenu = () => {
-    setStateMenu(true);
-  };
+  const enterHover = () => {setIsHover(true);};
+  const leaveHover = () => {setIsHover(false);};
+  const showMenu = () => {setStateMenu(true);};
   const hideMenu=()=>{ setStateMenu(false)}
 
   return (

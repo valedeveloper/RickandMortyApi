@@ -5,24 +5,24 @@
     top: 0;
     left: 0;
     right: 0px;
-    height: 100vh;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 .modalContainer{ 
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap:10px;
-    justify-content: center;
+    justify-content: center; */
     position: relative;
+
     
 }
 
 .closeModal{ 
     color: #233160;
     font-size: 30px;
-    top: 140px;
+    top: 5px;
     right: 10px;
     z-index: 10;
     position: absolute;
@@ -30,6 +30,4 @@
 .closeModal:hover{
     transform: scale(1.5);
     transition: all 1s ease-in-out;
-    
-
 }
