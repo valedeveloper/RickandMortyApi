@@ -3,7 +3,7 @@ import { useListObject } from "../../hooks/useListObject";
 import Spinner from "../../components/Spinner/Spinner";
 import ListCards from "../../components/ListCards/ListCards";
 import Pagination from "../../components/Pagination/Pagination";
-const initialUrl = "https://rickandmortyapi.com/api/character";
+const INITIAL_CHARACTER = "https://rickandmortyapi.com/api/character";
 function Characters() {
   const {
     listResults,
@@ -15,8 +15,9 @@ function Characters() {
   } = useListObject();
 
   useEffect(() => {
-    getAllData(initialUrl);
+    getAllData(INITIAL_CHARACTER);
   }, []);
+ 
 
   return (
     <>

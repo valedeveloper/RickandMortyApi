@@ -2,22 +2,19 @@ import React, { useState, useEffect } from "react";
 import CardGenerate from "../../components/CardGenerate/CardGenerate";
 import CharacterGenerate from "../../components/CharacterGenerate/CharacterGenerate";
 import Spinner from "../../components/Spinner/Spinner";
-import { useListObject } from "../../hooks/useListObject";
+import { useSingleCharacter } from "../../hooks/useSingleCharacter";
 import "./Generate.css";
 function Generate() {
   const [idCharacter, setIdCharacter] = useState(null);
   const [listGenerate, setListGenerate] = useState([]);
-  const { getSingleCharacter, singleCharacter, spinner } = useListObject();
-  let numberRandom = 0;
-  const arrayNumbers = [];
+  const { getSingleCharacter, singleCharacter, spinner } = useSingleCharacter();
 
   useEffect(() => {
-    if (idCharacter != null) {
+    if (idCharacter===null) return 
       getSingleCharacter(idCharacter);
       setListGenerate((prevListGenerate) =>
         prevListGenerate.concat(singleCharacter)
       );
-    }
   }, [idCharacter]);
 
   const validateNumber = () => {

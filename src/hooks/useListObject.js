@@ -1,22 +1,23 @@
-import { useState } from "react";
-
+import {  useState } from "react";
 export function useListObject() {
   const [listResults, setListResults] = useState([]);
-  const [singleCharacter, setSingleCharacter] = useState([]);
   const [pagination, setPagination] = useState([]);
-  const [spinner,setSpinner]=useState(true)
-
+  const [spinner, setSpinner] = useState(true);
 
   const getAllData = (url) => {
+    setSpinner(true);
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setListResults(data.results);
         setPagination(data.info);
-        setSpinner(false)
       })
-      .catch((e) => console.log(e));
+    .finally(()=>setSpinner(false))
+    .catch((e) => console.log(e));
   };
+
+
+  
 
   const handledPrev = () => {
     getAllData(pagination.prev);
@@ -25,20 +26,9 @@ export function useListObject() {
     getAllData(pagination.next);
   };
 
-  const getSingleCharacter = async (id) => {
-    try{ 
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character/${id}`
-      );
-      const data = await response.json();
-      setSingleCharacter(data);
-      setSpinner(false)
-    }
-    catch(error){ 
-      console.log(error)
-    }
-   
-  };
+  
+
+ 
 
   return {
     listResults,
@@ -46,8 +36,6 @@ export function useListObject() {
     getAllData,
     handledPrev,
     handledNext,
-    getSingleCharacter,
-    singleCharacter,
-    spinner
+    spinner,
   };
 }

@@ -13,7 +13,7 @@ code {
     monospace;
 }
 
-h1,h3, span, p{ 
+h1,h3, span, p{
   cursor: pointer;
 }
 
@@ -28,17 +28,17 @@ h1,h3, span, p{
 
 /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
 .container::-webkit-scrollbar-thumb:hover {
-  background: #b3b3b3;
+  background:  #61dafb;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* Cambiamos el fondo cuando esté en active */
 .container::-webkit-scrollbar-thumb:active {
-  background-color: #999999;
+  background-color: #61dafb;
 }
 /* Ponemos un color de fondo y redondeamos las esquinas del track */
 .container::-webkit-scrollbar-track {
-  background: #e1e1e1;
+  background: #61dafb;
   border-radius: 4px;
 }
 
