@@ -13,6 +13,8 @@ function Episodies() {
     getAllData,
     handledPrev,
     handledNext,
+    nextPage,
+    prevPage
   } = useListObject();
 
   useEffect(() => {
@@ -31,6 +33,9 @@ function Episodies() {
             next={pagination.next}
             handledPrev={handledPrev}
             handledNext={handledNext}
+            functionNumberPrev={prevPage}
+            functionNumberNext={nextPage}
+
           />
         </>
       )}

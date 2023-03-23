@@ -3,6 +3,7 @@ import CardGenerate from "../../components/CardGenerate/CardGenerate";
 import CharacterGenerate from "../../components/CharacterGenerate/CharacterGenerate";
 import Spinner from "../../components/Spinner/Spinner";
 import { useSingleCharacter } from "../../hooks/useSingleCharacter";
+import {getNumberValidated} from "./getNumberRandom"
 import "./Generate.css";
 function Generate() {
   const [idCharacter, setIdCharacter] = useState(null);
@@ -17,56 +18,8 @@ function Generate() {
       );
   }, [idCharacter]);
 
-  const validateNumber = () => {
-    // while (validateNumberArray) {
-    //   console.log(validateNumberArray);
-    //   numberRandom = Math.floor(Math.random() * 826);
-    //   console.log(numberRandom);
-    //   validateNumberArray = arrayNumbers.some((item) => item === numberRandom);
-    //   if(!validateNumberArray){
-    //     arrayNumbers.push(numberRandom);
-    //   }else{ return validateNumberArray}
-    // }
-    // if(validateNumberArray){
-    //   arrayNumbers.push(numberRandom)
-    //   console.log(arrayNumbers)
-    // }
-    // while (validateNumber) {
-    //   console.log(validateNumber);
-    //   if (!validateNumber) {
-    //     setIdCharacter(numberRandom)
-    //     console.log(numberRandom)
-    //   } else {
-    //     return validateNumber
-    //   }
-    // }
-    // console.log(arrayNumbers)
-  };
-  function generarNumerosSinRepetir() {
-    var numeros = [];
-    var numero;
-
-    numero = Math.floor(Math.random() * 826);
-    if (numeros.indexOf(numero) === -1) {
-      numeros.push(numero);
-      console.log(numeros);
-      setIdCharacter(numero);
-    } else {
-      generarNumerosSinRepetir();
-    }
-
-    // let validateNumberArray= numeros.some((item) => item != numero);
-
-    // // Generar una cantidad de números aleatorios no repetidos
-    // while (validateNumberArray) {
-
-    //   if (numeros.indexOf(numero) === -1) {
-    //     validateNumberArray=false
-    //     numeros.push(numero);
-    //     console.log(numeros)
-    //   }else{
-    //     return validateNumberArray
-    //   }
+  const setNumberRandom=()=>{ 
+    setIdCharacter(getNumberValidated)
   }
 
   return (
@@ -87,7 +40,7 @@ function Generate() {
           gender={singleCharacter?.gender}
         />
       )}
-      <button className="btnGenerate" onClick={generarNumerosSinRepetir}>
+      <button className="btnGenerate" onClick={setNumberRandom}>
         Generar
       </button>
       {listGenerate.length != [] ? (
