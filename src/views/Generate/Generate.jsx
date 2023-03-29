@@ -7,21 +7,11 @@ import {getNumberValidated} from "./getNumberRandom"
 import "./Generate.css";
 function Generate() {
   const [idCharacter, setIdCharacter] = useState(null);
-  const [listGenerate, setListGenerate] = useState([]);
-  const { getSingleCharacter, singleCharacter, spinner } = useSingleCharacter();
-
-  useEffect(() => {
-    if (idCharacter===null) return 
-      getSingleCharacter(idCharacter);
-      setListGenerate((prevListGenerate) =>
-        prevListGenerate.concat(singleCharacter)
-      );
-  }, [idCharacter]);
+  const { singleCharacter, spinner, listGenerate} = useSingleCharacter(idCharacter);
 
   const setNumberRandom=()=>{ 
     setIdCharacter(getNumberValidated)
   }
-
   return (
     <div className="containerGenerate">
       {idCharacter === null ? (
@@ -29,13 +19,13 @@ function Generate() {
           No se ha cargado ningún personaje. ¡Genéralo!
         </p>
       ) : spinner ? (
-        <Spinner />
+        <Spinner/>
       ) : (
         <CardGenerate
           image={singleCharacter?.image}
           title={singleCharacter?.name}
           status={singleCharacter?.status}
-          location={singleCharacter.location?.name}
+           location={singleCharacter.location?.name}
           specie={singleCharacter?.species}
           gender={singleCharacter?.gender}
         />

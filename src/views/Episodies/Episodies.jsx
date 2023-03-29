@@ -4,22 +4,15 @@ import { useListObject } from "../../hooks/useListObject";
 import ListCards from "../../components/ListCards/ListCards";
 import Pagination from "../../components/Pagination/Pagination";
 
-const initialUrl = "https://rickandmortyapi.com/api/episode";
+const INITIAL_EPISODIES = "https://rickandmortyapi.com/api/episode";
 function Episodies() {
   const {
-    spinner,
     listResults,
     pagination,
-    getAllData,
-    handledPrev,
-    handledNext,
-    nextPage,
-    prevPage
-  } = useListObject();
-
-  useEffect(() => {
-    getAllData(initialUrl);
-  }, []);
+    handledPrevPage,
+    handledNextPage,
+    spinner,
+  } = useListObject({url:INITIAL_EPISODIES});
 
   return (
     <>
@@ -31,10 +24,8 @@ function Episodies() {
           <Pagination
             prev={pagination.prev}
             next={pagination.next}
-            handledPrev={handledPrev}
-            handledNext={handledNext}
-            functionNumberPrev={prevPage}
-            functionNumberNext={nextPage}
+            handledPrev={handledPrevPage}
+            handledNext={handledNextPage}
 
           />
         </>

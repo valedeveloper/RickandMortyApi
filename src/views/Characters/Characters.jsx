@@ -8,16 +8,11 @@ function Characters() {
   const {
     listResults,
     pagination,
-    getAllData,
-    handledPrev,
-    handledNext,
+    handledPrevPage,
+    handledNextPage,
     spinner,
-  } = useListObject();
+  } = useListObject({url:INITIAL_CHARACTER});
 
-  useEffect(() => {
-    getAllData(INITIAL_CHARACTER);
-  }, []);
- 
 
   return (
     <>
@@ -27,8 +22,8 @@ function Characters() {
         <Pagination
           prev={pagination.prev}
           next={pagination.next}
-          handledPrev={handledPrev}
-          handledNext={handledNext}/>
+          handledPrev={handledPrevPage}
+          handledNext={handledNextPage}/>
       </>
     }
     </>

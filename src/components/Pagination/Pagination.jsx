@@ -3,17 +3,21 @@ import { FaArrowAltCircleRight, FaArrowCircleLeft } from "react-icons/fa";
 import './Pagination.css'
 function Pagination({ prev, next, handledPrev, handledNext}) {
    const [pagination,setPagination]=useState(1)
-   const handledPrevPage = () => {
-      handledPrev();
+   const prevPage = () => {
+      handledPrev()
+      setPagination(prevPage=>prevPage-1)
+
    }
-   const handledNextPage = () => {
-      handledNext();
+   const nextPage = () => {
+      handledNext()
+      setPagination(prevPage=>prevPage+1)
+
    }
    return (
       <div className="pagination">
-         {prev ? <FaArrowCircleLeft onClick={handledPrevPage} color='#233160' fontSize='30px' /> : null}
+         {prev ? <FaArrowCircleLeft onClick={prevPage} color='#233160' fontSize='30px' /> : null}
          <span>{pagination}</span>
-         {next ? <FaArrowAltCircleRight onClick={handledNextPage} color='#233160' fontSize='30px' /> : null}
+         {next ? <FaArrowAltCircleRight onClick={nextPage} color='#233160' fontSize='30px' /> : null}
       </div>
    )
 }
