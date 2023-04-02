@@ -4,7 +4,7 @@ export const getData = async (url) => {
     const data = await response.json();
     return data;
   } catch (e) {
-    return console.log("Eror");
+    throw new Error("No se pueden cargar los datos... ")
   }
 };
 

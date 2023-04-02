@@ -7,7 +7,7 @@ import {getNumberValidated} from "./getNumberRandom"
 import "./Generate.css";
 function Generate() {
   const [idCharacter, setIdCharacter] = useState(null);
-  const { singleCharacter, spinner, listGenerate} = useSingleCharacter(idCharacter);
+  const { singleCharacter, spinner, listGenerate} = useSingleCharacter({id:idCharacter});
 
   const setNumberRandom=()=>{ 
     setIdCharacter(getNumberValidated)

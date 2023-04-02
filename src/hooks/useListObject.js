@@ -6,12 +6,12 @@ export function useListObject({ url }) {
   const [spinner, setSpinner] = useState(true);
 
   const getAllData = (url) => {
-    setSpinner(true);
-    getData(url).then(info=> {
+      setSpinner(true);
+      getData(url).then(info=> {
       setListResults(info.results)
       setPagination(info.info)
       })
-      .finally(() => setSpinner(false));
+      .finally(() => setSpinner(false)); //Cuando hayan finalizado todas las promesas, se ejecuta esta función. 
   };
 
   const handledPrevPage = () => {
@@ -26,7 +26,6 @@ export function useListObject({ url }) {
   return {
     listResults,
     pagination,
-    getAllData,
     handledPrevPage,
     handledNextPage,
     spinner,
